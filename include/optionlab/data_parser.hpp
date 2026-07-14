@@ -3,6 +3,7 @@
 #include <functional>
 #include <memory>
 #include <string>
+#include <map>
 
 namespace optionlab {
 
@@ -57,4 +58,12 @@ private:
     std::unique_ptr<Impl> impl_;
 };
 
+class DataParser{
+private:
+    struct Impl;
+    std::map <long long, double> graph;
+public:
+    void graph_data();
+
+};
 }  // namespace optionlab

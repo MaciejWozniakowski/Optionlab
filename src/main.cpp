@@ -7,9 +7,12 @@ int main() {
     optionlab::DataGatherer feed(api_token);
     feed.subscribe("NVDA");
     feed.on_tick([](const optionlab::Trade& t) {
-        std::cout << t.symbol << t.price << t.volume << '\n';
-    }
-);
+        std::cout << t.symbol <<'\n' << t.price <<'\n' << t.volume << '\n' << t.timestamp << '\n';
+    });
+    //TODO make this run on a boost thread 
+    //TODO store the data in a hash map?
+    //TODO implement pricing logic
+
     feed.start();
     feed.stop();
     return 0;
