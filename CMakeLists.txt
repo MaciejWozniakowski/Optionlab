@@ -42,7 +42,7 @@ file(GLOB_RECURSE OPTIONLAB_SOURCES CONFIGURE_DEPENDS ${CMAKE_SOURCE_DIR}/src/*.
 list(REMOVE_ITEM OPTIONLAB_SOURCES ${CMAKE_SOURCE_DIR}/src/main.cpp)
 
 add_library(optionlab ${OPTIONLAB_SOURCES})
-target_include_directories(optionlab PUBLIC ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(optionlab PUBLIC ${CMAKE_SOURCE_DIR}/include/optionlab)
 target_link_libraries(optionlab PUBLIC Threads::Threads)
 target_link_libraries(optionlab PUBLIC Boost::boost Boost::json)
 target_link_libraries(optionlab PRIVATE OpenSSL::SSL OpenSSL::Crypto)

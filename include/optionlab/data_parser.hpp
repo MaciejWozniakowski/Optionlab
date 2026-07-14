@@ -18,14 +18,6 @@ struct Trade {
 // trade to a user-supplied callback. The heavy Boost.Beast / Asio / OpenSSL
 // machinery is hidden behind a pimpl so consumers (e.g. the pricing engine)
 // only need this lightweight header.
-//
-// Typical use:
-//     optionlab::DataGatherer feed{std::getenv("FINNHUB_TOKEN")};
-//     feed.subscribe("AAPL");
-//     feed.on_tick([](const optionlab::Trade& t){ /* push to queue */ });
-//     feed.start();      // background I/O thread
-//     ...
-//     feed.stop();
 class DataGatherer {
 public:
     using TickCallback = std::function<void(const Trade&)>;
